@@ -1,18 +1,44 @@
+<!DOCTYPE html>
 <html>
 	<head>
-		<script src="js/mail-generator.js"></script>
-		<link href="css/style.css" rel="stylesheet" media="screen">
-    <script>
-      window.onload = function(){
-        // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
-        // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
-        
-      };
+		<link href="style.css" rel="stylesheet" media="screen">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">           </script>
+        <script src="mail-generator.js"></script>
+        <script>
+        window.onload = function(){
+            
+       loadGeeMails();
+            geemails.forEach(addMessageToList);
+            window.setInterval(generateNewMessageToList, 5000, generateMessage());
+          
+            function addMessageToList(message) {
+                $('.inbox').append("<li>" + message.subject + message.sender + message.date + "</li>");
+            }
+          
+            function generateNewMessageToList() {
+                var message = generateMessage();
+                addMessageToList(message);
+            }
+           
+            
+            
+        };
     </script>
-	</head>
+     
+    </head>
+    
 	<body>
-		<div class="container" id="main">
-			Build Me!
+		<div>
+			GeeMail
+            <button class="btn btn-primary" type="button"><span class="badge"></span> New Messages 
+            </button>
 		</div>
+        
+        <div class="counter"></div>
+        <div class="inbox" id="main">
+          <ul></ul>
+        </div>
+               
 	</body>
+
 </html>
