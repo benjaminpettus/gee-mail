@@ -2,27 +2,45 @@
 
 * {
     font-family: Arial;
-    
 }
+
+header {
+    width:100%;
+    position: sticky;
+    background-color: green;
+    z-index: 1;
+    clear: both;
+
+}
+
 #main {
    height: auto;
 	width: 800px;
-	
-	position: absolute;
-    margin-top: 20px;
+    height:500px;
+	position: center;
+    margin-top: 10px;
     margin-left: 10px;
-    z-index: 1;
-    color: gray;
-    
+    overflow: scroll;
 }
 
-#counter{
-    font-family: arial;
-}
+
 
 .current {
+    margin-bottom: 2px;
+    background-color: lightgray;
     
-    border: solid 1px;
+}
+
+
+
+.subject {
+margin-top: 2px;
+margin-bottom: 2px;
+
+}
+.content {
+    display: none;
+
 }
 
 
