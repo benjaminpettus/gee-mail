@@ -1,7 +1,6 @@
 
 /*This is the mail generator file that will generate initial mail messages and expose methods for creating new messages in your project. Do not make any modifications to this file for your solution. Happy coding!*/
-
-
+window.onload = function(){
 //Gee Mail message stub data 
 var subject = ['Call Your Mother', 'Cheap Online Meds', 'Change Your Life Today', 'Sppoky Stories', 'Meet Singles In Your Area', 'Have You Heard?', 'Yo', 'RE: Looking for a three legged cat', 'Get Rich Quick!', 'FW: Token Chain Email'];
 var sender = ['Mary Monster', 'Dave Danger', 'Spam Master', 'Spike Spurner', 'Ray Ranger', 'Catherine Chaos', 'Van Pire', 'Andy Argye', 'Rick Roger', 'Sue Mee'];
@@ -42,8 +41,74 @@ function getRandomDate(){
 	return new Date(year, month, day, hours, minutes);
 }
 
-//load intial GeeMail data to window object
 (function(){
 	window.geemails = [];
 	loadGeeMails();	
-})();
+
+
+	// interval timer for onloading messages
+	setInterval(addNewMessage, 3000, generateMessage());
+
+	//function that creates new message
+	function addNewMessage(){
+		var message = generateMessage();
+		newMessage(message);
+	}
+
+	// function adds messages into main div
+	function newMessage(message){
+
+		
+		//adding current message inbox container
+		var current = document.createElement('div');
+			main.appendChild(current);
+			current.className = 'current';
+
+		//appending date to main container
+		var date = document.createElement('div');
+			date.className = 'date';
+			main.appendChild(date);
+				date.innerHTML = message.date;
+
+
+		//appending subject to main container
+		var subject = document.createElement('div');
+			subject.className = 'subject';
+			main.appendChild(subject);
+
+				subject.innerHTML = message.subject;
+
+		//appending message content to container
+		var content = document.createElement('div');
+			content.className = 'content';
+			main.appendChild(content);
+				content.innerHTML = message.body;
+
+		//invokes add to counter function when each message loads 
+		addToCounter();
+		}
+
+		 
+		//initializing counter 
+		   var counter = 0;     
+
+		 	    //increments counter when messages are generated
+		   function addToCounter(addNewMessage){
+                counter++;
+                // jquery to append html counter
+                $('#counter').html(counter);
+            }
+            	
+	}
+	
+
+)();
+
+
+
+};
+        
+      
+
+
+
