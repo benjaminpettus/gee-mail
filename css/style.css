@@ -7,7 +7,7 @@
 #main {
    height: auto;
 	width: 800px;
-	background-color: lightgrey;
+	
 	position: absolute;
     margin-top: 20px;
     margin-left: 10px;
@@ -20,26 +20,11 @@
     font-family: arial;
 }
 
-.inbox {
-    clear: both;
-    width: 700px;
-    height: auto;
-    margin-top: 10px;
-    margin-left: 10px;
-    position: fixed;
-    display: inline-block;
-}
-
-
-li {
-    font-family: arial;
-    color: red;
-    font-size: 12pt;
+.current {
     
+    border: solid 1px;
 }
 
-p {
 
-}
 
 
