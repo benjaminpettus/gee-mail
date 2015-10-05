@@ -1,43 +1,13 @@
 <!DOCTYPE html>
 <html>
 	<head>
-	<link href="style.css" rel="stylesheet" media="screen">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">           </script>
-        <script src="mail-generator.js"></script>
-        <script>
-        window.onload = function(){
-            
-       loadGeeMails();
-           addMessageToList
-            setInterval(generateNewMessageToList, 1000, generateMessage());
-            
-             
-            function generateNewMessageToList() {
-                var message = generateMessage();
-                addMessageToList(message);
-             
-            }
-            function addMessageToList(message) {
-                $('.inbox').append("<a><li>" + message.date  + message.sender + message.subject + "</li></a>");
-                
-                $('#main').append("<p>" + message.body  + "</p>");
-                addToCounter();
-                
-            }
-            var counter = 0
-            function addToCounter(generateNewMessageToList){
-                counter++;
-                $('#counter').html(counter);
-            }
-            
-         
-      
+	<link href="css/style.css" rel="stylesheet" media="screen">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>   
 
-        
-        };   
             
-        </script>
-     
+            <script src="js/mail-generator.js"></script>
+             
+         
     </head>
     
 	<body>
@@ -46,10 +16,11 @@
         </div>
         <div class="button"></div><span id="counter">0</span>  New Messages</div>
         
-        <div class="inbox" id="main">
+        <div id="main">
         
-            </div>
-               
+        </div>
+
+
 	</body>
 
 </html>
