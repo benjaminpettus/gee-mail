@@ -86,11 +86,29 @@ function getRandomDate(){
 			current.appendChild(content);
 				content.innerHTML = message.body;
 
+
+
+
+		var openMessage = document.getElementsByClassName('current');
+			for(var i = 0; i < openMessage.length; i++){
+				openMessage[i].addEventListener('click', function(){
+					this.className += '.show';
+				
+				});
+				
+			}
+		
+
+
 		//invokes add to counter function when each message loads 
 		addToCounter();
 		}
 
-		 
+
+
+
+
+
 		//initializing counter 
 		   var counter = 0;     
 
@@ -101,7 +119,11 @@ function getRandomDate(){
                 $('#counter').html(counter);
             }
             	
+	//
+		
+	//
 	}
+
 	
 
 )();
