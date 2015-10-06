@@ -88,15 +88,28 @@ function getRandomDate(){
 
 
 
+		//event listener for clicking on current div
+			current.addEventListener('click', function(){
 
-		var openMessage = document.getElementsByClassName('current');
-			for(var i = 0; i < openMessage.length; i++){
-				openMessage[i].addEventListener('click', function(){
-					this.className += '.show';
-				
-				});
-				
-			}
+				//storing the reference to the child of parent div
+				var contentElement = this.querySelector('.content');
+
+					//if 'this' has a class name of content and show
+					if(contentElement.className === 'content show'){
+
+						//change it to just content
+						contentElement.className = 'content'
+
+						//if its content change to 'content show'
+					} else{
+						contentElement.className = 'content show';
+						
+					}
+
+					
+			});
+
+
 		
 
 
