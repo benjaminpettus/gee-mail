@@ -46,7 +46,8 @@ function getRandomDate(){
 (function(){
 	window.geemails = [];
 	loadGeeMails();	
-
+	
+	document.body.style.backgroundImage = "url(http://www.stamp-collecting-resource.com/images/us-postage.jpg)";
 
 	// interval timer for onloading messages
 	setInterval(addNewMessage, 3000, generateMessage());
@@ -62,6 +63,7 @@ function getRandomDate(){
 
 		
 		//adding current message inbox container
+
 		var current = document.createElement('div');
 			main.appendChild(current);
 			current.className = 'current';
@@ -70,7 +72,7 @@ function getRandomDate(){
 		var date = document.createElement('div');
 			date.className = 'date';
 			current.appendChild(date);
-				date.innerHTML = message.date;
+				date.innerHTML = "Date: " + message.date;
 
 
 		//appending subject to main container
@@ -78,7 +80,7 @@ function getRandomDate(){
 			subject.className = 'subject';
 			current.appendChild(subject);
 
-				subject.innerHTML = message.subject;
+				subject.innerHTML = "RE: " + message.subject;
 
 		//appending message content to container
 		var content = document.createElement('div');
@@ -118,6 +120,34 @@ function getRandomDate(){
 		}
 
 
+		var aside = document.createElement('aside');
+			main.appendChild(aside);
+			aside.className = 'sidebar';
+
+			var inbox = document.createElement('button')
+				aside.appendChild(inbox);
+				inbox.className = 'aside button';
+				inbox.innerHTML = 'Inbox';
+
+			var sent = document.createElement('button')
+				aside.appendChild(sent);
+				sent.className = 'aside button';
+				sent.innerHTML = 'Sent';
+
+			var drafts = document.createElement('button')
+				aside.appendChild(drafts);
+				drafts.className = 'aside button';
+				drafts.innerHTML = 'Drafts';
+
+			var junk = document.createElement('button')
+				aside.appendChild(junk);
+				junk.className = 'aside button';
+				junk.innerHTML = 'Junk';
+
+			var trash = document.createElement('button')
+				aside.appendChild(trash);
+				trash.className = 'aside button';
+				trash.innerHTML = 'Trash';
 
 
 
@@ -138,9 +168,9 @@ function getRandomDate(){
 	}
 
 	
+		
 
 )();
-
 
 
 };
