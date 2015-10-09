@@ -47,7 +47,7 @@ function getRandomDate(){
 	window.geemails = [];
 	loadGeeMails();	
 	
-	document.body.style.backgroundImage = "url(http://www.stamp-collecting-resource.com/images/us-postage.jpg)";
+	document.body.style.backgroundImage = "url(http://farm4.static.flickr.com/3038/2318472533_b34b543858_o.jpg)";
 
 	// interval timer for onloading messages
 	setInterval(addNewMessage, 3000, generateMessage());
