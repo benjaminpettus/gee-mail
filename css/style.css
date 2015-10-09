@@ -21,12 +21,12 @@ header {
 }
 
 span {
-    color: white;
+    color: lightblue;
     margin-left: 70px;
 }
 
 #count {
-    color: white;
+    color: blue;
 }
 aside.sidebar {
     width: 175px;
